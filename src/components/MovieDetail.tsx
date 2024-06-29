@@ -12,9 +12,13 @@ const MovieDetail: React.FC = observer(() => {
     }
   }, [id]);
 
+  useEffect(() => {
+    console.log("Movie detail:", movieStore.movieDetail); // Логирование данных
+  }, [movieStore.movieDetail]);
+
   if (!movieStore.movieDetail) return <div>Loading...</div>;
 
-  const { poster, name, description, year, genres } = movieStore.movieDetail;
+  const { poster, name, description, year, genres, rating } = movieStore.movieDetail;
 
   return (
     <div>
@@ -23,6 +27,13 @@ const MovieDetail: React.FC = observer(() => {
       <p>{description}</p>
       <p>{year}</p>
       <p>{genres?.map(genre => genre.name).join(', ')}</p>
+      <div>
+        <h2>Ratings</h2>
+        <p>KP: {rating?.kp}</p>
+        <p>IMDB: {rating?.imdb}</p>
+        <p>Film Critics: {rating?.filmCritics}</p>
+        <p>Russian Film Critics: {rating?.russianFilmCritics}</p>
+      </div>
     </div>
   );
 });

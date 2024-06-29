@@ -1,30 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { observer } from 'mobx-react-lite';
 import movieStore from '../stores/movieStore';
 import MovieCard from './MovieCard';
+import './MovieList.css';
 
 const MovieList: React.FC = observer(() => {
-  const [error, setError] = useState<string | null>(null);
-
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        await movieStore.fetchMovies();
-      } catch (error) {
-        setError('Failed to load movies. Please try again later.');
-      }
-    };
-
-    fetchData();
+    movieStore.fetchMovies();
   }, []);
 
-  if (error) {
-    return <div>{error}</div>;
-  }
-
   return (
-    <div>
-      {movieStore.filteredMovies.map(movie => (
+    <div className="movie-list">
+      {movieStore.movies.map(movie => (
         <MovieCard key={movie.id} movie={movie} />
       ))}
     </div>

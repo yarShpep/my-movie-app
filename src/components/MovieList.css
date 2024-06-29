@@ -1,0 +1,30 @@
+.movie-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  
+  .movie-card {
+    flex: 0 0 22%;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .movie-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .movie-card h3 {
+    font-size: 1.2em;
+    margin: 10px 0;
+  }
+  
+  .movie-card p {
+    margin: 5px 0;
+  }
+  

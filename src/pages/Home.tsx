@@ -2,7 +2,7 @@ import React from 'react';
 import MovieList from '../components/MovieList';
 import Filter from '../components/Filter';
 
-const Home = () => {
+const Home: React.FC = () => {
   return (
     <div>
       <Filter />

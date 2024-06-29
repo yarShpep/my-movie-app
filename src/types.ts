@@ -1,9 +1,21 @@
-export interface Movie {
-    id: string;
+export interface Genre {
     name: string;
-    poster: { url: string };
+}
+
+export interface Rating {
+    kp: number;
+    imdb: number;
+    filmCritics: number;
+    russianFilmCritics: number;
+    await: number;
+}
+
+export interface Movie {
+    id: number;
+    name: string;
     year: number;
-    rating: number;
-    description?: string;
-    genres?: { name: string }[];
-  }
+    description: string;
+    poster: { url: string };
+    genres: Genre[];
+    rating: Rating;
+}

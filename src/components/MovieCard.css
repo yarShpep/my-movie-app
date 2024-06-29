@@ -1,0 +1,36 @@
+.movie-card {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    transition: transform 0.2s;
+    background-color: #1e1e1e;
+    padding: 10px;
+    border-radius: 8px;
+  }
+  
+  .movie-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .movie-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .movie-info {
+    text-align: left;
+    padding-top: 10px;
+  }
+  
+  .movie-info h3 {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #ffffff;
+  }
+  
+  .movie-info p {
+    margin: 5px 0;
+    color: #b0b0b0;
+  }
+  
